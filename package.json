@@ -1,0 +1,26 @@
+{
+  "name": "fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "fastify": "^4.26.1",
+    "fastify-swagger": "^5.2.0",
+    "fastify-zod": "^1.4.0",
+    "routerfy": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "prisma": "^5.9.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}

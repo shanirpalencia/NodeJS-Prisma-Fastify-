@@ -1,0 +1,26 @@
+server.get("/", async (req, res) => {
+
+    try {
+        const users = await prisma.user.findMany();
+        res.send(users);
+      } catch (error) {
+        res.status(500).send({ error: "Error fetching users" });
+      }
+
+});
+
+
+//import  usersRoutes  from "./api/users/routes";
+//import postsRoutes from "./api/posts/routes";
+
+
+//server.register(usersRoutes, { prefix: "api/users" });
+//server.register(postsRoutes, { prefix: "api/posts" });
+
+
+const items = fs.readdirSync("src/api");
+for (const item of items) {
+	const itemPath = path.join("src/api", item);
+  const itemName = path.join(itemPath, "routes.ts");
+  server.register(require(path.resolve(itemName)), { prefix: "api/"+item })
+}
