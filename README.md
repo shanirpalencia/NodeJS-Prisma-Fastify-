@@ -1,9 +1,23 @@
 <h1>API NodeJs, Fastify, Prisma, TypeScript and SQL Server or PostgreSQL</h1>
 Basic example
 
-.env
-DATABASE_URL="sqlserver://localhost:1433;database=mydb;user=sa;password=youpassword;trustServerCertificate=true"
+.env file:</br>
+DATABASE_URL="sqlserver://localhost:1433;database=mydb;user=sa;password=youpassword;trustServerCertificate=true" </br>
+<h4>or</h4></br>
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public" </br> </br>
 
+prisma/schema.prisma file:
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+<h4>or</h4></br>
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+</br> </br>
 Test with PostMan or https://www.usebruno.com
 
 post {
